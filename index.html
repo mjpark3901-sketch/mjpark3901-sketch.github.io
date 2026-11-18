@@ -125,16 +125,16 @@
   .id-foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:10px;letter-spacing:.1em;color:var(--sage)}
 
   /* lectures */
-  .lec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-  .lec{position:relative;display:flex;flex-direction:column;min-height:232px;background:var(--ivory);padding:clamp(24px,2.6vw,36px);transition:background .45s var(--ease)}
+  .lec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .lec{position:relative;display:flex;flex-direction:column;min-height:268px;background:var(--ivory);padding:clamp(24px,2.4vw,32px);transition:background .45s var(--ease)}
   .lec::after{content:"↗";position:absolute;right:clamp(22px,2.6vw,34px);top:clamp(20px,2.4vw,30px);font-size:14px;color:var(--sage);opacity:0;transform:translate(-4px,4px);transition:.45s var(--ease)}
   .lec:hover{background:var(--paper)}
   .lec:hover::after{opacity:1;transform:none}
   .lec-top{display:flex;align-items:baseline;gap:12px}
   .lec-no{font-family:var(--serif);font-size:11px;letter-spacing:.2em;color:var(--gold)}
   .lec-tag{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-  .lec-title{margin-top:20px;font-family:var(--serif);font-size:clamp(18px,1.75vw,22px);line-height:1.45;letter-spacing:-.01em;word-break:keep-all;max-width:20ch}
-  .lec-desc{margin-top:10px;font-size:12px;line-height:1.85;color:var(--muted);word-break:keep-all;max-width:34ch}
+  .lec-title{margin-top:20px;font-family:var(--serif);font-size:clamp(18px,1.6vw,21px);line-height:1.45;letter-spacing:-.01em;word-break:keep-all;max-width:16ch}
+  .lec-desc{margin-top:10px;font-size:12px;line-height:1.85;color:var(--muted);word-break:keep-all;max-width:30ch}
   .lec-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:22px}
   .lec-chips span{font-size:10px;letter-spacing:.03em;color:var(--sage);background:rgba(74,97,87,.07);border:1px solid rgba(74,97,87,.14);border-radius:999px;padding:4px 10px}
   .lec--heal{background:linear-gradient(160deg,#F1F4EE,#EFF2EC)}
@@ -222,6 +222,7 @@
   @media (max-width:1024px){
     :root{--wrap:min(1180px, calc(100% - 64px))}
     .id-grid{grid-template-columns:1fr 1fr}
+    .lec{min-height:0}
     .career-grid{grid-template-columns:1fr}
     .side-stack{position:static;flex-direction:row;flex-wrap:wrap}
     .side-stack .panel{flex:1 1 260px}
@@ -236,6 +237,7 @@
     .book-copy{order:-1}
     .book-band::after{display:none}
     .contact-grid{grid-template-columns:1fr;align-items:start}
+    .lec-grid{grid-template-columns:1fr}
   }
   @media (max-width:760px){
     :root{--wrap:calc(100% - 40px)}
@@ -366,7 +368,7 @@
           <p class="id-no">02</p>
           <p class="id-en">Lecturer</p>
           <h3 class="id-title">비즈니스·이미지 강사</h3>
-          <p class="id-body">영업과 커뮤니케이션, 프레젠테이션에 퍼스널컬러와 AI 보고·시각화를 결합해, 현장에서 바로 쓰는 강의를 만듭니다. 이론보다 오늘 오후에 적용할 한 가지를 남깁니다.</p>
+          <p class="id-body">영업과 커뮤니케이션, 프레젠테이션에 퍼스널컬러와 이미지 브랜딩을 결합해, 현장에서 바로 쓰는 강의를 만듭니다. 이론보다 오늘 오후에 적용할 한 가지를 남깁니다.</p>
           <p class="id-foot">강의 · 워크숍 · 컨설팅</p>
         </article>
         <article class="id-card" data-rv style="--d:.16s">
@@ -387,32 +389,26 @@
         <div data-rv>
           <p class="sec-no">02</p>
           <p class="sec-kicker">Lecture Topics</p>
-          <h2 class="sec-title">네 개의 트랙,<br>현장에 맞춰 조합합니다.</h2>
+          <h2 class="sec-title">세 개의 트랙,<br>현장에 맞춰 조합합니다.</h2>
         </div>
         <p class="sec-lead" data-rv style="--d:.1s">기업·공공기관·대학의 목적과 대상에 따라 한 트랙을 깊게, 또는 두세 트랙을 엮어 프로그램으로 구성합니다.</p>
       </div>
 
       <div class="lec-grid">
         <article class="lec" data-rv>
-          <div class="lec-top"><span class="lec-no">01</span><span class="lec-tag">AI · Report</span></div>
-          <h3 class="lec-title">한눈에 설득하는<br>AI 보고·시각화</h3>
-          <p class="lec-desc">기획과 보고서를 구조화하고, AI 이미지·슬라이드로 메시지를 한 장에 담는 실습형 강의.</p>
-          <div class="lec-chips"><span>보고서 구조화</span><span>AI 이미지</span><span>슬라이드</span></div>
-        </article>
-        <article class="lec" data-rv style="--d:.06s">
-          <div class="lec-top"><span class="lec-no">02</span><span class="lec-tag">Business</span></div>
+          <div class="lec-top"><span class="lec-no">01</span><span class="lec-tag">Business</span></div>
           <h3 class="lec-title">영업 &amp; 비즈니스<br>커뮤니케이션</h3>
           <p class="lec-desc">현장에서 통하는 소통의 순서와 설득력 있는 프레젠테이션. 말의 구조를 바꾸는 훈련.</p>
           <div class="lec-chips"><span>영업 화법</span><span>프레젠테이션</span><span>설득 구조</span></div>
         </article>
-        <article class="lec" data-rv style="--d:.12s">
-          <div class="lec-top"><span class="lec-no">03</span><span class="lec-tag">Image</span></div>
+        <article class="lec" data-rv style="--d:.06s">
+          <div class="lec-top"><span class="lec-no">02</span><span class="lec-tag">Image</span></div>
           <h3 class="lec-title">퍼스널컬러 &amp;<br>이미지 브랜딩</h3>
           <p class="lec-desc">퍼스널컬러와 색채심리로 비즈니스 첫인상을 설계합니다. 나에게 맞는 색과 태도를 찾는 시간.</p>
           <div class="lec-chips"><span>퍼스널컬러</span><span>색채심리</span><span>첫인상</span></div>
         </article>
-        <article class="lec lec--heal" data-rv style="--d:.18s">
-          <div class="lec-top"><span class="lec-no">04</span><span class="lec-tag">Healing</span></div>
+        <article class="lec lec--heal" data-rv style="--d:.12s">
+          <div class="lec-top"><span class="lec-no">03</span><span class="lec-tag">Healing</span></div>
           <h3 class="lec-title">싱잉볼 &amp; 색채심리<br>힐링 테라피</h3>
           <p class="lec-desc">싱잉볼 사운드 테라피와 색채심리를 함께 쓰는 명상형 프로그램. 긴장을 내려놓고 리듬을 회복합니다.</p>
           <div class="lec-chips"><span>싱잉볼 사운드 테라피</span><span>명상</span><span>컬러 힐링</span></div>
