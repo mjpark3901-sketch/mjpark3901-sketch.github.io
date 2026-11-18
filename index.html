@@ -188,7 +188,7 @@
   .proj-fig{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#EFE9DE}
   .proj-fig img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 1.1s var(--ease)}
   .proj:hover .proj-fig img{transform:scale(1.035)}
-  .proj-fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 11px;font-size:9.5px;letter-spacing:.09em;color:rgba(250,248,245,.94);background:linear-gradient(to top,rgba(20,24,21,.74),rgba(20,24,21,0))}
+  .proj-fig::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(31,36,33,.07);pointer-events:none}
   .proj-body{display:flex;flex-direction:column;flex:1;padding:clamp(20px,2vw,26px)}
   .proj-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .proj-no{font-family:var(--serif);font-size:11px;letter-spacing:.22em;color:var(--gold)}
@@ -548,17 +548,16 @@
           <p class="sec-kicker">Collaboration &amp; Projects</p>
           <h2 class="sec-title">공공기관·협회·기업과<br>기획부터 운영까지 함께합니다.</h2>
         </div>
-        <p class="sec-lead" data-rv style="--d:.1s">교육과정 설계부터 ESG·문화예술 행사, 전시와 컨퍼런스까지. 기관의 목적과 예산, 사람과 일정을 함께 놓고 처음부터 끝까지 운영해 온 프로젝트입니다.</p>
+        <p class="sec-lead" data-rv style="--d:.1s">교육과정 설계부터 ESG·문화예술 행사, 전시와 컨퍼런스까지. 기관의 목적과 예산, 사람과 일정을 함께 놓고 처음부터 끝까지 운영해 왔습니다. 교육·ESG·전시 협업 제안을 환영합니다.</p>
       </div>
 
       <div class="proj-grid">
         <article class="proj" data-rv>
           <figure class="proj-fig">
             <img src="assets/project-esg-art.jpg" srcset="assets/project-esg-art-800.jpg 800w, assets/project-esg-art.jpg 1200w" sizes="(max-width:760px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="서울숲 ESG 어린이 미술대회 포스터 — 2024년 10월 27일 언더스탠드에비뉴 아트스탠드">
-            <figcaption>2024.10.27 · 언더스탠드에비뉴 아트스탠드</figcaption>
           </figure>
           <div class="proj-body">
-            <div class="proj-top"><p class="proj-no">01</p><p class="proj-kind">ESG Culture</p></div>
+            <div class="proj-top"><p class="proj-no">01</p><p class="proj-kind">ESG Culture · 2024.10</p></div>
             <p class="proj-org">소셜혁신연구소 언더스탠드에비뉴</p>
             <h3 class="proj-title">서울숲 ESG 어린이 미술대회</h3>
             <p class="proj-desc">한국산업인력공단 서울강남지사와 공동개최한 체험형 ESG 대회입니다. 어린이가 환경·사회·지배구조를 그림으로 표현하도록 기획하고, 접수와 심사, 시상식, 연계 체험 프로그램까지 운영 전반을 총괄했습니다.</p>
@@ -570,10 +569,9 @@
         <article class="proj" data-rv style="--d:.06s">
           <figure class="proj-fig">
             <img src="assets/project-seonhari.jpg" srcset="assets/project-seonhari-800.jpg 800w, assets/project-seonhari.jpg 1200w" sizes="(max-width:760px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="선하리 아뜰리에 전시 「자연을 담다」 참여 작품 — 고양이, 앵무새, 정원을 그린 세 점의 그림">
-            <figcaption>2023.02 · 언더스탠드에비뉴 선하리 갤러리</figcaption>
           </figure>
           <div class="proj-body">
-            <div class="proj-top"><p class="proj-no">02</p><p class="proj-kind">Exhibition</p></div>
+            <div class="proj-top"><p class="proj-no">02</p><p class="proj-kind">Exhibition · 2023.02</p></div>
             <p class="proj-org">언더스탠드에비뉴 선하리 갤러리</p>
             <h3 class="proj-title">청년 예술인 전시 기획</h3>
             <p class="proj-desc">예술로 ESG 가치를 알리는 「선하리」 예술인 지원사업의 전시를 기획하고 총괄했습니다. 「삶의 순간들」·「지금의 이미지」·「자연을 담다」 세 번의 전시에서 작가 공모와 심사, 전시 구성, 관람객 체험 프로그램(아뜰리에) 운영까지 이어 붙였습니다.</p>
@@ -585,10 +583,9 @@
         <article class="proj" data-rv style="--d:.12s">
           <figure class="proj-fig">
             <img src="assets/project-khma.jpg" srcset="assets/project-khma-800.jpg 800w, assets/project-khma.jpg 1200w" sizes="(max-width:760px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="2026년 제1회 주택관리사 커리어콘서트 무대">
-            <figcaption>2026 · 제1회 주택관리사 커리어콘서트</figcaption>
           </figure>
           <div class="proj-body">
-            <div class="proj-top"><p class="proj-no">03</p><p class="proj-kind">Education</p></div>
+            <div class="proj-top"><p class="proj-no">03</p><p class="proj-kind">Education · 2026</p></div>
             <p class="proj-org">대한주택관리사협회 교육기획실</p>
             <h3 class="proj-title">교육과정 · 커리어콘서트 총괄</h3>
             <p class="proj-desc">주택관리사 교육을 운영하는 대한주택관리사협회에서 전국 교육장의 보수교육·배치교육을 비롯한 법정·비법정 교육과정을 설계하고 총괄합니다. 2026년 제1회 주택관리사 커리어콘서트를 기획했고, 유관기관과의 협약과 협력 사업을 잇는 역할도 맡고 있습니다.</p>
