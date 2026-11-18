@@ -325,6 +325,11 @@
     [data-rv]{opacity:1;transform:none;transition:none}
     *{animation-duration:.001ms !important;transition-duration:.001ms !important}
   }
+  @media print{
+    [data-rv]{opacity:1 !important;transform:none !important}
+    .site-head,.grain{display:none}
+    .sec{padding-block:34px}
+  }
 </style>
 </head>
 <body>
