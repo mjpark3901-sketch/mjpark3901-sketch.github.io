@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박미정 · Rosy — 교육기획 실장 · 강사 · 여성작가</title>
+<meta name="description" content="사람과 조직의 성장을 설계하고 감각적으로 설득합니다. 교육기획 18년, 강사, 여성작가 박미정의 프로필과 강의 분야.">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root{
+    --ivory:#FAF8F5;
+    --paper:#FFFDFA;
+    --ink:#1F2421;
+    --ink-soft:#3A403B;
+    --muted:#6E756D;
+    --sage:#4A6157;
+    --sage-soft:#E8EDE7;
+    --rose:#B87D73;
+    --gold:#C5A059;
+    --line:rgba(31,36,33,.14);
+    --line-soft:rgba(31,36,33,.085);
+    --serif:'RosySerif', 'Noto Serif KR', 'Nanum Myeongjo', serif;
+    --sans:'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --wrap:min(1180px, calc(100% - 96px));
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4,p,ul,ol,li,blockquote,figure{margin:0;padding:0}
+  ul,ol{list-style:none}
+  ::selection{background:rgba(197,160,89,.28)}
+  :focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+  .wrap{width:var(--wrap);margin-inline:auto}
+  .serif{font-family:var(--serif);font-weight:400}
+
+  /* paper grain */
+  .grain{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* ---------- header ---------- */
+  .site-head{position:fixed;inset:0 0 auto 0;z-index:60;height:76px;display:flex;align-items:center;
+    background:rgba(250,248,245,.78);backdrop-filter:blur(16px) saturate(120%);-webkit-backdrop-filter:blur(16px) saturate(120%);
+    border-bottom:1px solid transparent;transition:height .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease)}
+  .site-head.scrolled{height:66px;border-bottom-color:var(--line);background:rgba(250,248,245,.92)}
+  .head-in{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .logo{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:20px;letter-spacing:.04em;line-height:1}
+  .logo b{font-weight:400}
+  .logo small{font-family:var(--sans);font-size:9px;letter-spacing:.26em;color:var(--muted);text-transform:uppercase}
+  .nav{display:flex;align-items:center;gap:34px}
+  .nav a{position:relative;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);padding:6px 0;transition:color .3s}
+  .nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--sage);transition:width .35s var(--ease)}
+  .nav a:hover{color:var(--sage)}
+  .nav a:hover::after{width:100%}
+  .nav a.active{color:var(--sage)}
+  .nav a.active::after{width:100%}
+  .head-cta{border:1px solid var(--ink);border-radius:999px;padding:9px 18px;font-size:11px;letter-spacing:.1em;transition:.35s var(--ease)}
+  .head-cta:hover{background:var(--ink);color:var(--ivory)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-top:calc(76px + clamp(46px,6.4vw,80px));padding-bottom:clamp(30px,4vw,52px);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(320px,.94fr);gap:clamp(32px,5vw,76px);align-items:center}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--sage)}
+  .eyebrow::before{content:"";width:38px;height:1px;background:var(--gold);flex:none}
+  .hero-title{font-family:var(--serif);font-weight:400;font-size:clamp(33px,4.15vw,56px);line-height:1.36;letter-spacing:-.02em;margin-top:24px;word-break:keep-all;text-wrap:balance}
+  .hero-title em{font-style:normal;color:var(--rose)}
+  .hero-lead{margin-top:24px;max-width:440px;font-size:14px;line-height:1.95;color:var(--muted);word-break:keep-all}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+  .tag{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:11px;letter-spacing:.03em;color:var(--ink-soft);background:rgba(255,253,250,.55)}
+  .actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#F8F5EF;border:1px solid var(--ink);border-radius:999px;padding:14px 24px;font-size:12.5px;letter-spacing:.02em;transition:.4s var(--ease);box-shadow:0 16px 30px -22px rgba(31,36,33,.85)}
+  .btn .arw{display:inline-block;transition:transform .4s var(--ease)}
+  .btn:hover{background:var(--sage);border-color:var(--sage)}
+  .btn:hover .arw{transform:translateX(4px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);box-shadow:none}
+  .btn-ghost:hover{background:rgba(74,97,87,.06);color:var(--sage);border-color:rgba(74,97,87,.4)}
+  .btn-ghost:hover .arw{transform:none}
+  .mini-link{margin-left:4px;font-size:11.5px;color:var(--muted);text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(31,36,33,.25);transition:color .3s}
+  .mini-link:hover{color:var(--sage)}
+
+  .hero-figure{position:relative;display:flex;justify-content:flex-end;isolation:isolate}
+  .hero-figure::before{content:"";position:absolute;z-index:-1;width:min(340px,92%);aspect-ratio:1;border:1px solid rgba(74,97,87,.26);border-radius:50%;top:-46px;right:-34px}
+  .hero-figure::after{content:"";position:absolute;z-index:-1;width:230px;height:230px;left:-26px;bottom:-46px;border-radius:50%;background:radial-gradient(circle at 40% 40%, rgba(197,160,89,.22), rgba(197,160,89,0) 68%)}
+  .profile-card{position:relative;width:min(378px,100%);background:var(--paper);border:1px solid var(--line);padding:28px 30px 24px;box-shadow:0 36px 64px -46px rgba(31,36,33,.55)}
+  .pc-top{display:flex;align-items:center;justify-content:space-between;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .pc-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;margin-inline:auto}
+  .pc-num{display:flex;align-items:baseline;margin-top:22px}
+  .pc-big{font-family:var(--serif);font-size:62px;line-height:.95;letter-spacing:-.035em}
+  .pc-unit{font-family:var(--serif);font-size:19px;margin-left:7px;color:var(--sage)}
+  .pc-cap{margin-top:8px;font-size:11px;letter-spacing:.1em;color:var(--muted)}
+  .pc-list{margin-top:20px;border-top:1px solid var(--line-soft)}
+  .pc-list li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line-soft);font-size:11.5px;line-height:1.6}
+  .pc-list span{font-size:9.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .pc-list b{font-weight:500;color:var(--ink-soft);word-break:keep-all}
+  .pc-sign{margin-top:18px;font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.06em;color:var(--sage);opacity:.9}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(28px,4vw,46px)}
+  .stat{padding:24px 30px;border-left:1px solid var(--line-soft)}
+  .stat:first-child{border-left:0;padding-left:0}
+  .stat .k{font-family:var(--serif);font-size:24px;letter-spacing:-.01em;line-height:1.3}
+  .stat .v{margin-top:5px;font-size:10.5px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase}
+
+  /* ---------- sections ---------- */
+  .sec{padding-block:clamp(62px,8vw,112px)}
+  .sec-head{display:grid;grid-template-columns:1fr minmax(250px,330px);gap:36px;align-items:end;margin-bottom:clamp(30px,4vw,52px)}
+  .sec-no{font-family:var(--serif);font-size:12px;letter-spacing:.3em;color:var(--gold)}
+  .sec-kicker{margin-top:12px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--sage)}
+  .sec-title{margin-top:12px;font-family:var(--serif);font-weight:400;font-size:clamp(25px,3vw,38px);line-height:1.44;letter-spacing:-.015em;word-break:keep-all;text-wrap:balance}
+  .sec-lead{font-size:12.8px;line-height:1.9;color:var(--muted);word-break:keep-all;padding-bottom:4px}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+
+  /* identity */
+  .id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,20px)}
+  .id-card{position:relative;display:flex;flex-direction:column;min-height:296px;background:var(--paper);border:1px solid var(--line-soft);padding:clamp(22px,2.3vw,32px);transition:.5s var(--ease)}
+  .id-card::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--sage);transition:width .55s var(--ease)}
+  .id-card:hover{transform:translateY(-4px);border-color:var(--line);box-shadow:0 30px 54px -44px rgba(31,36,33,.6)}
+  .id-card:hover::before{width:100%}
+  .id-no{font-family:var(--serif);font-size:11.5px;letter-spacing:.24em;color:var(--gold)}
+  .id-en{margin-top:auto;padding-top:30px;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
+  .id-title{margin-top:7px;font-family:var(--serif);font-size:20px;line-height:1.42;letter-spacing:-.01em}
+  .id-body{margin-top:12px;font-size:12.2px;line-height:1.9;color:var(--muted);word-break:keep-all}
+  .id-foot{margin-top:22px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:10px;letter-spacing:.1em;color:var(--sage)}
+
+  /* lectures */
+  .lec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+  .lec{position:relative;display:flex;flex-direction:column;min-height:232px;background:var(--ivory);padding:clamp(24px,2.6vw,36px);transition:background .45s var(--ease)}
+  .lec::after{content:"↗";position:absolute;right:clamp(22px,2.6vw,34px);top:clamp(20px,2.4vw,30px);font-size:14px;color:var(--sage);opacity:0;transform:translate(-4px,4px);transition:.45s var(--ease)}
+  .lec:hover{background:var(--paper)}
+  .lec:hover::after{opacity:1;transform:none}
+  .lec-top{display:flex;align-items:baseline;gap:12px}
+  .lec-no{font-family:var(--serif);font-size:11px;letter-spacing:.2em;color:var(--gold)}
+  .lec-tag{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .lec-title{margin-top:20px;font-family:var(--serif);font-size:clamp(18px,1.75vw,22px);line-height:1.45;letter-spacing:-.01em;word-break:keep-all;max-width:20ch}
+  .lec-desc{margin-top:10px;font-size:12px;line-height:1.85;color:var(--muted);word-break:keep-all;max-width:34ch}
+  .lec-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:22px}
+  .lec-chips span{font-size:10px;letter-spacing:.03em;color:var(--sage);background:rgba(74,97,87,.07);border:1px solid rgba(74,97,87,.14);border-radius:999px;padding:4px 10px}
+  .lec--heal{background:linear-gradient(160deg,#F1F4EE,#EFF2EC)}
+  .lec--heal:hover{background:linear-gradient(160deg,#EDF1EA,#E9EFE6)}
+  .lec--heal .lec-chips span{background:rgba(184,125,115,.09);border-color:rgba(184,125,115,.22);color:#8E5A51}
+  .lec--heal .lec-title{color:var(--sage)}
+
+  /* book */
+  .book-band{position:relative;background:linear-gradient(180deg,#F5F1E9 0%,#F8F4ED 55%,#FAF8F5 100%);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);overflow:hidden}
+  .book-band::after{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-220px;border-radius:50%;border:1px solid rgba(197,160,89,.22);pointer-events:none}
+  .book-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(40px,6vw,84px);align-items:center}
+  .book-cover{position:relative;width:min(320px,100%);aspect-ratio:3/4.15;display:flex;flex-direction:column;justify-content:space-between;padding:34px 26px 28px 38px;
+    background:linear-gradient(150deg,#FFFEFA 0%,#F6F0E4 62%,#EFE7D8 100%);
+    box-shadow:0 44px 70px -48px rgba(31,36,33,.62), 0 2px 0 rgba(255,255,255,.7) inset}
+  .book-cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;background:linear-gradient(90deg,rgba(31,36,33,.22),rgba(31,36,33,0));}
+  .book-cover::after{content:"";position:absolute;inset:14px;border:1px solid rgba(197,160,89,.42);pointer-events:none}
+  .bc-top{position:relative;font-size:8.5px;letter-spacing:.26em;color:var(--sage);text-transform:uppercase;line-height:1.8}
+  .bc-mid{position:relative;margin-block:auto;display:flex;flex-direction:column}
+  .bc-en{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  .bc-title{position:relative;font-family:var(--serif);font-size:clamp(23px,2.4vw,28px);line-height:1.52;letter-spacing:-.02em;word-break:keep-all;margin-top:14px}
+  .bc-rule{width:44px;height:1px;background:rgba(197,160,89,.7);margin-top:22px}
+  .bc-tag{margin-top:14px;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--sage)}
+  .bc-bottom{position:relative;margin-top:24px;padding-top:14px;border-top:1px solid rgba(31,36,33,.14);display:flex;justify-content:space-between;align-items:baseline;font-size:9px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .bc-bottom b{font-weight:500;color:var(--ink-soft)}
+  .book-copy .sec-kicker{margin-top:9px}
+  .book-title{margin-top:14px;font-family:var(--serif);font-size:clamp(26px,3.2vw,40px);line-height:1.42;letter-spacing:-.02em;word-break:keep-all}
+  .book-meta{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:11px;letter-spacing:.08em;color:var(--muted)}
+  .book-meta .sep{width:16px;height:1px;background:rgba(31,36,33,.24)}
+  .essay{margin-top:30px;padding-left:20px;border-left:1px solid var(--gold)}
+  .essay span{display:block;font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+  .essay p{margin-top:8px;font-family:var(--serif);font-size:clamp(16px,1.8vw,20px);line-height:1.6;color:var(--ink-soft);word-break:keep-all}
+  .book-note{margin-top:22px;font-size:12.2px;line-height:1.95;color:var(--muted);max-width:46ch;word-break:keep-all}
+
+  /* career */
+  .career-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+  .side-stack{display:flex;flex-direction:column;gap:14px;position:sticky;top:96px}
+  .panel{background:var(--paper);border:1px solid var(--line-soft);padding:24px 26px}
+  .panel h3{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--sage)}
+  .edu{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+  .edu li{font-size:12px;line-height:1.75;color:var(--ink-soft);word-break:keep-all}
+  .edu li small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.02em}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .chip{font-size:11px;letter-spacing:.01em;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:rgba(250,248,245,.6);word-break:keep-all}
+  .chip small{color:var(--muted);font-size:9.5px;letter-spacing:.02em}
+  .chip--key{background:var(--sage);border-color:var(--sage);color:#F7F4EC}
+  .chip--key small{color:rgba(247,244,236,.72)}
+  .awards{margin-top:14px;display:flex;flex-direction:column;gap:12px}
+  .awards li{position:relative;padding-left:14px;font-size:11.8px;line-height:1.7;color:var(--ink-soft);word-break:keep-all}
+  .awards li::before{content:"";position:absolute;left:0;top:8px;width:4px;height:4px;background:var(--gold);border-radius:50%}
+  .awards li small{display:block;color:var(--muted);font-size:10px;letter-spacing:.02em}
+
+  .timeline{border-top:1px solid var(--line)}
+  .timeline li{display:grid;grid-template-columns:158px minmax(0,1fr) auto;gap:20px;align-items:baseline;padding:20px 0 19px;border-bottom:1px solid var(--line-soft);transition:background .4s var(--ease)}
+  .timeline li:hover{background:rgba(255,253,250,.9)}
+  .tl-when{font-family:var(--serif);font-size:12.5px;letter-spacing:.03em;color:var(--muted);white-space:nowrap}
+  .tl-org{display:block;font-size:13.5px;line-height:1.55;color:var(--ink);word-break:keep-all}
+  .tl-org b{font-weight:600;letter-spacing:-.01em}
+  .tl-role{display:block;margin-top:5px;font-size:11px;letter-spacing:.03em;color:var(--muted)}
+  .tl-now{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(184,125,115,.4);border-radius:999px;padding:3px 9px}
+  .timeline li:first-child .tl-org b{color:var(--sage)}
+
+  /* contact */
+  .contact{position:relative;background:#1E2320;color:#F2EEE6;overflow:hidden;padding-top:clamp(64px,8vw,104px)}
+  .contact::before{content:"";position:absolute;width:640px;height:640px;right:-180px;bottom:-260px;border-radius:50%;background:radial-gradient(circle,rgba(74,97,87,.55),rgba(74,97,87,0) 68%);pointer-events:none}
+  .contact::after{content:"";position:absolute;width:280px;height:280px;left:-90px;top:-120px;border-radius:50%;border:1px solid rgba(197,160,89,.28);pointer-events:none}
+  .contact-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:end}
+  .contact .sec-kicker{color:rgba(197,160,89,.9);margin-top:0}
+  .contact h2{margin-top:18px;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,44px);line-height:1.45;letter-spacing:-.02em;word-break:keep-all;color:#F7F4EC}
+  .contact p{margin-top:18px;max-width:40ch;font-size:12.5px;line-height:1.9;color:rgba(242,238,230,.62);word-break:keep-all}
+  .contact-links{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(242,238,230,.18)}
+  .cl{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 2px;border-bottom:1px solid rgba(242,238,230,.14);transition:.4s var(--ease)}
+  .cl .lbl{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,238,230,.45);width:88px;flex:none}
+  .cl .val{flex:1;font-family:var(--serif);font-size:clamp(14px,1.5vw,17px);color:#F7F4EC;letter-spacing:.01em;word-break:break-all}
+  .cl .arw{color:rgba(197,160,89,.8);transition:transform .4s var(--ease)}
+  .cl:hover{background:rgba(250,248,245,.04)}
+  .cl:hover .arw{transform:translate(3px,-3px)}
+  .cl:hover .val{color:#fff}
+  .foot{margin-top:clamp(48px,6vw,80px);border-top:1px solid rgba(242,238,230,.12);padding:22px 0 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,238,230,.42)}
+  .foot b{font-weight:400;color:rgba(242,238,230,.65)}
+
+  /* reveal */
+  [data-rv]{opacity:0;transform:translateY(20px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+  [data-rv].in{opacity:1;transform:none}
+
+  @media (max-width:1024px){
+    :root{--wrap:min(1180px, calc(100% - 64px))}
+    .id-grid{grid-template-columns:1fr 1fr}
+    .career-grid{grid-template-columns:1fr}
+    .side-stack{position:static;flex-direction:row;flex-wrap:wrap}
+    .side-stack .panel{flex:1 1 260px}
+  }
+  @media (max-width:900px){
+    .nav{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero-figure{justify-content:flex-start}
+    .hero-figure::before,.hero-figure::after{display:none}
+    .profile-card{width:min(460px,100%)}
+    .book-grid{grid-template-columns:1fr;gap:36px}
+    .book-copy{order:-1}
+    .book-band::after{display:none}
+    .contact-grid{grid-template-columns:1fr;align-items:start}
+  }
+  @media (max-width:760px){
+    :root{--wrap:calc(100% - 40px)}
+    body{font-size:14.5px}
+    .site-head{height:64px}
+    .logo{font-size:17px}
+    .logo small{display:none}
+    .hero{padding-top:calc(64px + 34px)}
+    .hero-title{font-size:clamp(27px,7.4vw,34px);line-height:1.42}
+    .hero-lead{font-size:13px;margin-top:18px}
+    .tags{margin-top:20px;gap:6px}
+    .tag{font-size:10.5px;padding:5px 11px}
+    .actions{margin-top:26px}
+    .btn{padding:13px 20px;font-size:12px}
+    .mini-link{display:none}
+    .pc-big{font-size:52px}
+    .profile-card{padding:24px 22px 20px}
+    .stats{grid-template-columns:1fr;border-bottom:0}
+    .stat{border-left:0;border-bottom:1px solid var(--line-soft);padding:16px 0;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+    .stat .k{font-size:21px}
+    .stat .v{margin-top:0;text-align:right}
+    .sec-head{grid-template-columns:1fr;gap:16px;align-items:start}
+    .id-grid{grid-template-columns:1fr}
+    .id-card{min-height:0}
+    .id-en{padding-top:24px}
+    .lec-grid{grid-template-columns:1fr}
+    .lec{min-height:0}
+    .timeline li{grid-template-columns:1fr auto;gap:6px 12px;padding:16px 0}
+    .tl-when{grid-column:1 / -1;font-size:11.5px;color:var(--sage)}
+    .tl-now{grid-column:2;grid-row:2;align-self:start}
+    .side-stack{flex-direction:column}
+    .side-stack .panel{flex:0 0 auto}
+    .contact{padding-top:56px}
+    .cl{padding:15px 0;flex-wrap:wrap}
+    .cl .lbl{width:100%;margin-bottom:6px}
+    .foot{flex-direction:column;align-items:flex-start;gap:8px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    [data-rv]{opacity:1;transform:none;transition:none}
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-head" id="head">
+  <div class="wrap head-in">
+    <a class="logo" href="#top"><b>Rosy</b><small>Park Mi Jeong</small></a>
+    <nav class="nav" aria-label="주요 섹션">
+      <a href="#identity">Identity</a>
+      <a href="#lectures">Lectures</a>
+      <a href="#book">Book</a>
+      <a href="#career">Career</a>
+    </nav>
+    <a class="head-cta" href="#contact">강의 문의</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-rv>ROSY · PARK MI JEONG</p>
+          <h1 class="hero-title" data-rv style="--d:.08s">사람과 조직의 성장을 설계하고,<br><em>감각적으로</em> 설득합니다</h1>
+          <p class="hero-lead" data-rv style="--d:.16s">교육기획 18년, 공공·대학·협회의 사업을 기획하고 총괄해 왔습니다. 기획의 논리와 이미지의 감각을 함께 쓰는 교육기획 실장이자 강사, 그리고 여성작가입니다.</p>
+          <ul class="tags" data-rv style="--d:.22s">
+            <li class="tag">교육기획 실장</li>
+            <li class="tag">강사</li>
+            <li class="tag">여성작가</li>
+          </ul>
+          <div class="actions" data-rv style="--d:.28s">
+            <a class="btn" href="mailto:alwkdi83@naver.com">강의·협업 문의하기 <span class="arw">→</span></a>
+            <a class="btn btn-ghost" href="https://www.threads.net/@rosy_3901" target="_blank" rel="noopener">Threads <span class="arw">@rosy_3901</span></a>
+            <a class="mini-link" href="https://www.instagram.com/rosy_3901/" target="_blank" rel="noopener">Instagram @rosy_3901</a>
+          </div>
+        </div>
+
+        <div class="hero-figure" data-rv style="--d:.2s">
+          <aside class="profile-card" aria-label="프로필 요약">
+            <div class="pc-top"><span>Profile</span><span class="pc-dot" aria-hidden="true"></span><span>2026</span></div>
+            <div class="pc-num"><span class="pc-big">18</span><span class="pc-unit">년+</span></div>
+            <p class="pc-cap">교육기획 · 운영 경력</p>
+            <ul class="pc-list">
+              <li><span>소속</span><b>대한주택관리사협회 교육기획실 실장</b></li>
+              <li><span>분야</span><b>공공 · 대학 · 협회 사업 총괄</b></li>
+              <li><span>수상</span><b>한국산업인력공단 감사패 (2020)</b></li>
+              <li><span>저서</span><b>『세상을 바꾸는 퍼스널 브랜딩』</b></li>
+            </ul>
+            <p class="pc-sign">Park Mi Jeong</p>
+          </aside>
+        </div>
+      </div>
+
+      <div class="stats" data-rv style="--d:.34s">
+        <div class="stat"><p class="k">18년+</p><p class="v">교육기획 · 운영 경력</p></div>
+        <div class="stat"><p class="k">공공 · 대학 · 협회</p><p class="v">사업 기획 · 운영 총괄</p></div>
+        <div class="stat"><p class="k">감사패 수상</p><p class="v">한국산업인력공단 · 2020</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDENTITY -->
+  <section class="sec" id="identity">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-rv>
+          <p class="sec-no">01</p>
+          <p class="sec-kicker">Three Identities</p>
+          <h2 class="sec-title">교육을 기획하고,<br>사람을 설득하고,<br>문장으로 남깁니다.</h2>
+        </div>
+        <p class="sec-lead" data-rv style="--d:.1s">한 사람의 이력은 한 가지 이름으로 설명되지 않습니다. 기획자로서의 18년, 강사로서의 현장, 작가로서의 문장 — 세 가지 축이 서로의 근거가 됩니다.</p>
+      </div>
+
+      <div class="id-grid">
+        <article class="id-card" data-rv>
+          <p class="id-no">01</p>
+          <p class="id-en">Education Director</p>
+          <h3 class="id-title">교육기획 총괄</h3>
+          <p class="id-body">대형 커리어콘서트, 정부·공공 인재양성 사업, NCS 기반 실무 교육을 기획하고 운영 전반을 총괄합니다. 예산과 인력, 일정이 얽힌 사업을 끝까지 완주하는 일이 제 자리입니다.</p>
+          <p class="id-foot">기획 · 운영 · 총괄</p>
+        </article>
+        <article class="id-card" data-rv style="--d:.08s">
+          <p class="id-no">02</p>
+          <p class="id-en">Lecturer</p>
+          <h3 class="id-title">비즈니스·이미지 강사</h3>
+          <p class="id-body">영업과 커뮤니케이션, 프레젠테이션에 퍼스널컬러와 AI 보고·시각화를 결합해, 현장에서 바로 쓰는 강의를 만듭니다. 이론보다 오늘 오후에 적용할 한 가지를 남깁니다.</p>
+          <p class="id-foot">강의 · 워크숍 · 컨설팅</p>
+        </article>
+        <article class="id-card" data-rv style="--d:.16s">
+          <p class="id-no">03</p>
+          <p class="id-en">Writer &amp; Creator</p>
+          <h3 class="id-title">여성작가 &amp; 크리에이터</h3>
+          <p class="id-body">출판지도사 자격과 인문·커뮤니케이션의 시선으로 글을 씁니다. 여성작가 10인의 공동 저서에 참여했고, 스레드 <b>@rosy_3901</b>에서 브랜딩과 일하는 태도에 대해 씁니다.</p>
+          <p class="id-foot">글쓰기 · 브랜딩 · 스레드</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LECTURES -->
+  <section class="sec" id="lectures" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-rv>
+          <p class="sec-no">02</p>
+          <p class="sec-kicker">Lecture Topics</p>
+          <h2 class="sec-title">네 개의 트랙,<br>현장에 맞춰 조합합니다.</h2>
+        </div>
+        <p class="sec-lead" data-rv style="--d:.1s">기업·공공기관·대학의 목적과 대상에 따라 한 트랙을 깊게, 또는 두세 트랙을 엮어 프로그램으로 구성합니다.</p>
+      </div>
+
+      <div class="lec-grid">
+        <article class="lec" data-rv>
+          <div class="lec-top"><span class="lec-no">01</span><span class="lec-tag">AI · Report</span></div>
+          <h3 class="lec-title">한눈에 설득하는<br>AI 보고·시각화</h3>
+          <p class="lec-desc">기획과 보고서를 구조화하고, AI 이미지·슬라이드로 메시지를 한 장에 담는 실습형 강의.</p>
+          <div class="lec-chips"><span>보고서 구조화</span><span>AI 이미지</span><span>슬라이드</span></div>
+        </article>
+        <article class="lec" data-rv style="--d:.06s">
+          <div class="lec-top"><span class="lec-no">02</span><span class="lec-tag">Business</span></div>
+          <h3 class="lec-title">영업 &amp; 비즈니스<br>커뮤니케이션</h3>
+          <p class="lec-desc">현장에서 통하는 소통의 순서와 설득력 있는 프레젠테이션. 말의 구조를 바꾸는 훈련.</p>
+          <div class="lec-chips"><span>영업 화법</span><span>프레젠테이션</span><span>설득 구조</span></div>
+        </article>
+        <article class="lec" data-rv style="--d:.12s">
+          <div class="lec-top"><span class="lec-no">03</span><span class="lec-tag">Image</span></div>
+          <h3 class="lec-title">퍼스널컬러 &amp;<br>이미지 브랜딩</h3>
+          <p class="lec-desc">퍼스널컬러와 색채심리로 비즈니스 첫인상을 설계합니다. 나에게 맞는 색과 태도를 찾는 시간.</p>
+          <div class="lec-chips"><span>퍼스널컬러</span><span>색채심리</span><span>첫인상</span></div>
+        </article>
+        <article class="lec lec--heal" data-rv style="--d:.18s">
+          <div class="lec-top"><span class="lec-no">04</span><span class="lec-tag">Healing</span></div>
+          <h3 class="lec-title">싱잉볼 &amp; 색채심리<br>힐링 테라피</h3>
+          <p class="lec-desc">싱잉볼 사운드 테라피와 색채심리를 함께 쓰는 명상형 프로그램. 긴장을 내려놓고 리듬을 회복합니다.</p>
+          <div class="lec-chips"><span>싱잉볼 사운드 테라피</span><span>명상</span><span>컬러 힐링</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section class="sec book-band" id="book">
+    <div class="wrap">
+      <div class="book-grid">
+        <figure class="book-cover" data-rv>
+          <p class="bc-top">여성작가 10인의<br>찐 스토리</p>
+          <div class="bc-mid">
+            <span class="bc-en">Personal Branding</span>
+            <p class="bc-title">세상을 바꾸는<br>퍼스널 브랜딩</p>
+            <span class="bc-rule" aria-hidden="true"></span>
+            <span class="bc-tag">공동 저서 · Essay</span>
+          </div>
+          <div class="bc-bottom"><b>한국지식문화원</b><span>2024.05</span></div>
+        </figure>
+        <div class="book-copy">
+          <p class="sec-no" data-rv>03</p>
+          <p class="sec-kicker" data-rv style="--d:.05s">Author · 공동 저자</p>
+          <h2 class="book-title" data-rv style="--d:.1s">『세상을 바꾸는<br>퍼스널 브랜딩』</h2>
+          <p class="book-meta" data-rv style="--d:.14s"><span>한국지식문화원</span><i class="sep" aria-hidden="true"></i><span>2024.05</span><i class="sep" aria-hidden="true"></i><span>공동 저자 10인</span></p>
+          <div class="essay" data-rv style="--d:.18s">
+            <span>수록 글</span>
+            <p>「당당한 여자, 행복한 여자, 품위 있는 여자」</p>
+          </div>
+          <p class="book-note" data-rv style="--d:.22s">여성작가 열 명이 각자의 자리에서 쓴 이야기를 모은 책입니다. 박미정은 「당당한 여자, 행복한 여자, 품위 있는 여자」 한 편으로 참여했습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER -->
+  <section class="sec" id="career">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-rv>
+          <p class="sec-no">04</p>
+          <p class="sec-kicker">Career &amp; Credentials</p>
+          <h2 class="sec-title">18년, 기관을 옮겨도<br>해 온 일은 같았습니다.</h2>
+        </div>
+        <p class="sec-lead" data-rv style="--d:.1s">인재양성 사업과 교육기획의 현장을 지나며, 기획·운영·총괄의 역할을 넓혀 왔습니다.</p>
+      </div>
+
+      <div class="career-grid">
+        <div class="side-stack">
+          <div class="panel" data-rv>
+            <h3>Education</h3>
+            <ul class="edu">
+              <li>한국외국어대학교 국제지역대학원<small>국제지역학 석사</small></li>
+              <li>한국외국어대학교<small>신문방송학 · 인도학 학사</small></li>
+            </ul>
+          </div>
+          <div class="panel" data-rv style="--d:.06s">
+            <h3>Credentials</h3>
+            <div class="chips">
+              <span class="chip chip--key">평생교육사 2급 <small>교육부</small></span>
+              <span class="chip chip--key">싱잉볼 2급</span>
+              <span class="chip">퍼스널컬러전문가 1급</span>
+              <span class="chip">색채심리상담사 1급</span>
+              <span class="chip">프레젠테이션 강사 1급</span>
+              <span class="chip">출판지도사 <small>한국지식문화원</small></span>
+            </div>
+          </div>
+          <div class="panel" data-rv style="--d:.12s">
+            <h3>Awards</h3>
+            <ul class="awards">
+              <li>한국산업인력공단 직업능력개발사업 감사패<small>2020</small></li>
+              <li>일학습병행 전담자 최우수상<small>한국산업기술대학교 허브사업단 · 2018</small></li>
+            </ul>
+          </div>
+        </div>
+
+        <ol class="timeline">
+          <li data-rv>
+            <span class="tl-when">2024.10 — 현재</span>
+            <span class="tl-org"><b>대한주택관리사협회 교육기획실</b><span class="tl-role">실장 · 교육기획운영 총괄</span></span>
+            <span class="tl-now">Now</span>
+          </li>
+          <li data-rv style="--d:.04s">
+            <span class="tl-when">2022.08 — 2024.10</span>
+            <span class="tl-org"><b>소셜혁신연구소 언더스탠드에비뉴</b><span class="tl-role">본부장 · 교육기획 사업운영총괄</span></span>
+          </li>
+          <li data-rv style="--d:.08s">
+            <span class="tl-when">2021.02 — 2022.08</span>
+            <span class="tl-org"><b>서울시평생교육진흥원 시민참여팀</b><span class="tl-role">책임 · 교육기획운영</span></span>
+          </li>
+          <li data-rv style="--d:.12s">
+            <span class="tl-when">2016.04 — 2021.02</span>
+            <span class="tl-org"><b>한양여자대학교 공동훈련센터</b><span class="tl-role">팀장 · 사업기획 운영총괄</span></span>
+          </li>
+          <li data-rv style="--d:.16s">
+            <span class="tl-when">2014.06 — 2016.04</span>
+            <span class="tl-org"><b>한국SW기술진흥협회 인재양성팀</b><span class="tl-role">연구원 · 교육기획운영·홍보</span></span>
+          </li>
+          <li data-rv style="--d:.2s">
+            <span class="tl-when">2011.04 — 2014.06</span>
+            <span class="tl-org"><b>한국전기연구원 전력산업센터</b><span class="tl-role">연구원 · 교육기획·홍보</span></span>
+          </li>
+          <li data-rv style="--d:.24s">
+            <span class="tl-when">2010.05 — 2011.01</span>
+            <span class="tl-org"><b>에너지경제연구원</b><span class="tl-role">연구원 · 교육사업 지원</span></span>
+          </li>
+          <li data-rv style="--d:.28s">
+            <span class="tl-when">2008.06 — 2010.03</span>
+            <span class="tl-org"><b>맥스틴글로벌 리서치센터</b><span class="tl-role">컨설턴트 · 교육사업운영</span></span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div data-rv>
+          <p class="sec-kicker">05 — Contact</p>
+          <h2>강의와 협업,<br>여기로 연락 주세요.</h2>
+          <p>기업·공공기관·대학의 교육 기획과 강의, 브랜딩과 글쓰기 협업을 환영합니다. 일정과 대상, 원하는 결과를 함께 적어 주시면 가장 빠르게 답드립니다.</p>
+        </div>
+        <div class="contact-links" data-rv style="--d:.1s">
+          <a class="cl" href="mailto:alwkdi83@naver.com">
+            <span class="lbl">Email</span>
+            <span class="val">alwkdi83@naver.com</span>
+            <span class="arw" aria-hidden="true">↗</span>
+          </a>
+          <a class="cl" href="https://www.threads.net/@rosy_3901" target="_blank" rel="noopener">
+            <span class="lbl">Threads</span>
+            <span class="val">@rosy_3901</span>
+            <span class="arw" aria-hidden="true">↗</span>
+          </a>
+          <a class="cl" href="https://www.instagram.com/rosy_3901/" target="_blank" rel="noopener">
+            <span class="lbl">Instagram</span>
+            <span class="val">@rosy_3901</span>
+            <span class="arw" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="foot">
+        <span><b>박미정 · Rosy</b> — 교육기획 실장 · 강사 · 여성작가</span>
+        <span>© <span id="year">2026</span> Park Mi Jeong. All rights reserved.</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var head=document.getElementById('head');
+  function onScroll(){ head.classList.toggle('scrolled', window.scrollY>18); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var items=document.querySelectorAll('[data-rv]');  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px', threshold:.08});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  var secs=links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function spy(){
+    var y=window.scrollY+140, idx=-1;
+    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) idx=i; });
+    links.forEach(function(a,i){ a.classList.toggle('active', i===idx); });
+  }
+  spy(); window.addEventListener('scroll', spy, {passive:true});
+})();
+</script>
+</body>
+</html>
