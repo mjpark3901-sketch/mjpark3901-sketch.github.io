@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>박미정 · Rosy — 교육기획 실장 · 강사 · 여성작가</title>
-<meta name="description" content="교육기획 18년, 한국산업인력공단 HRD전문위원. 영업·비즈니스 커뮤니케이션, 퍼스널컬러·이미지 브랜딩, 싱잉볼·색채심리 힐링 테라피 세 트랙의 강의와 공공·대학·기업 교육기획.">
+<meta name="description" content="교육기획 18년, 한국산업인력공단 HRD전문위원. 영업·비즈니스 커뮤니케이션, 퍼스널컬러·이미지 브랜딩, 싱잉볼·색채심리 힐링 테라피 세 트랙의 강의와 공공·대학·기업 교육기획, ESG·문화예술·전시 협업.">
 <link rel="canonical" href="https://mjpark3901-sketch.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="박미정 · Rosy">
@@ -181,6 +181,29 @@
   .hist-list li + li::before{content:"·";margin:0 7px;color:rgba(31,36,33,.3)}
   .hist-note{margin-top:18px;font-size:11.5px;line-height:1.9;color:var(--muted);word-break:keep-all}
 
+  /* collaboration & projects */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,20px)}
+  .proj{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line-soft);transition:.5s var(--ease)}
+  .proj:hover{transform:translateY(-4px);border-color:var(--line);box-shadow:0 30px 54px -44px rgba(31,36,33,.6)}
+  .proj-fig{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:#EFE9DE}
+  .proj-fig img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 1.1s var(--ease)}
+  .proj:hover .proj-fig img{transform:scale(1.035)}
+  .proj-fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 11px;font-size:9.5px;letter-spacing:.09em;color:rgba(250,248,245,.94);background:linear-gradient(to top,rgba(20,24,21,.74),rgba(20,24,21,0))}
+  .proj-body{display:flex;flex-direction:column;flex:1;padding:clamp(20px,2vw,26px)}
+  .proj-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .proj-no{font-family:var(--serif);font-size:11px;letter-spacing:.22em;color:var(--gold)}
+  .proj-kind{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .proj-org{margin-top:14px;font-size:10.5px;letter-spacing:.02em;color:var(--sage);word-break:keep-all}
+  .proj-title{margin-top:6px;font-family:var(--serif);font-size:clamp(17px,1.6vw,20px);line-height:1.45;letter-spacing:-.01em;word-break:keep-all}
+  .proj-desc{margin-top:11px;font-size:12px;line-height:1.85;color:var(--muted);word-break:keep-all}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:18px}
+  .proj-tags span{font-size:10px;letter-spacing:.03em;color:var(--sage);background:rgba(74,97,87,.07);border:1px solid rgba(74,97,87,.14);border-radius:999px;padding:4px 10px}
+  .proj-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:10px;letter-spacing:.12em;color:var(--ink-soft)}
+  .collab-areas{display:grid;grid-template-columns:170px minmax(0,1fr);gap:20px;align-items:center;margin-top:clamp(24px,3vw,34px);padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .ca-label{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--sage)}
+  .ca-list{display:flex;flex-wrap:wrap;gap:8px}
+  .ca-list li{font-size:11.5px;line-height:1.5;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:rgba(255,253,250,.6);word-break:keep-all}
+
   /* book */
   .book-band{position:relative;background:linear-gradient(180deg,#F5F1E9 0%,#F8F4ED 55%,#FAF8F5 100%);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);overflow:hidden}
   .book-band::after{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-220px;border-radius:50%;border:1px solid rgba(197,160,89,.22);pointer-events:none}
@@ -232,6 +255,7 @@
   .tl-org{display:block;font-size:13.5px;line-height:1.55;color:var(--ink);word-break:keep-all}
   .tl-org b{font-weight:600;letter-spacing:-.01em}
   .tl-role{display:block;margin-top:5px;font-size:11px;letter-spacing:.03em;color:var(--muted)}
+  .tl-note{display:block;margin-top:4px;font-size:10.5px;line-height:1.6;letter-spacing:.01em;color:rgba(110,117,109,.92);word-break:keep-all}
   .tl-now{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(184,125,115,.4);border-radius:999px;padding:3px 9px}
   .timeline li:first-child .tl-org b{color:var(--sage)}
 
@@ -261,6 +285,7 @@
   @media (max-width:1024px){
     :root{--wrap:min(1180px, calc(100% - 64px))}
     .id-grid{grid-template-columns:1fr 1fr}
+    .proj-grid{grid-template-columns:1fr 1fr}
     .lec{min-height:0}
     .career-grid{grid-template-columns:1fr}
     .side-stack{position:static;flex-direction:row;flex-wrap:wrap}
@@ -303,6 +328,8 @@
     .sec-head{grid-template-columns:1fr;gap:16px;align-items:start}
     .id-grid{grid-template-columns:1fr}
     .id-card{min-height:0}
+    .proj-grid{grid-template-columns:1fr}
+    .collab-areas{grid-template-columns:1fr;gap:10px}
     .id-en{padding-top:24px}
     .lec-grid{grid-template-columns:1fr}
     .lec{min-height:0}
@@ -341,10 +368,11 @@
     <nav class="nav" aria-label="주요 섹션">
       <a href="#identity">Identity</a>
       <a href="#lectures">Lectures</a>
+      <a href="#collaboration">Projects</a>
       <a href="#book">Book</a>
       <a href="#career">Career</a>
     </nav>
-    <a class="head-cta" href="#contact">강의 문의</a>
+    <a class="head-cta" href="#contact">강의·협업 문의</a>
   </div>
 </header>
 
@@ -511,6 +539,77 @@
     </div>
   </section>
 
+  <!-- COLLABORATION & PROJECTS -->
+  <section class="sec" id="collaboration" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div data-rv>
+          <p class="sec-no">03</p>
+          <p class="sec-kicker">Collaboration &amp; Projects</p>
+          <h2 class="sec-title">공공기관·협회·기업과<br>기획부터 운영까지 함께합니다.</h2>
+        </div>
+        <p class="sec-lead" data-rv style="--d:.1s">교육과정 설계부터 ESG·문화예술 행사, 전시와 컨퍼런스까지. 기관의 목적과 예산, 사람과 일정을 함께 놓고 처음부터 끝까지 운영해 온 프로젝트입니다.</p>
+      </div>
+
+      <div class="proj-grid">
+        <article class="proj" data-rv>
+          <figure class="proj-fig">
+            <img src="assets/project-esg-art.jpg" srcset="assets/project-esg-art-800.jpg 800w, assets/project-esg-art.jpg 1200w" sizes="(max-width:760px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="서울숲 ESG 어린이 미술대회 포스터 — 2024년 10월 27일 언더스탠드에비뉴 아트스탠드">
+            <figcaption>2024.10.27 · 언더스탠드에비뉴 아트스탠드</figcaption>
+          </figure>
+          <div class="proj-body">
+            <div class="proj-top"><p class="proj-no">01</p><p class="proj-kind">ESG Culture</p></div>
+            <p class="proj-org">소셜혁신연구소 언더스탠드에비뉴</p>
+            <h3 class="proj-title">서울숲 ESG 어린이 미술대회</h3>
+            <p class="proj-desc">한국산업인력공단 서울강남지사와 공동개최한 체험형 ESG 대회입니다. 어린이가 환경·사회·지배구조를 그림으로 표현하도록 기획하고, 접수와 심사, 시상식, 연계 체험 프로그램까지 운영 전반을 총괄했습니다.</p>
+            <div class="proj-tags"><span>ESG 문화행사</span><span>공동개최</span><span>체험형 프로그램</span></div>
+            <p class="proj-foot">기획 · 운영 총괄</p>
+          </div>
+        </article>
+
+        <article class="proj" data-rv style="--d:.06s">
+          <figure class="proj-fig">
+            <img src="assets/project-seonhari.jpg" srcset="assets/project-seonhari-800.jpg 800w, assets/project-seonhari.jpg 1200w" sizes="(max-width:760px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="선하리 아뜰리에 전시 「자연을 담다」 참여 작품 — 고양이, 앵무새, 정원을 그린 세 점의 그림">
+            <figcaption>2023.02 · 언더스탠드에비뉴 선하리 갤러리</figcaption>
+          </figure>
+          <div class="proj-body">
+            <div class="proj-top"><p class="proj-no">02</p><p class="proj-kind">Exhibition</p></div>
+            <p class="proj-org">언더스탠드에비뉴 선하리 갤러리</p>
+            <h3 class="proj-title">청년 예술인 전시 기획</h3>
+            <p class="proj-desc">예술로 ESG 가치를 알리는 「선하리」 예술인 지원사업의 전시를 기획하고 총괄했습니다. 「삶의 순간들」·「지금의 이미지」·「자연을 담다」 세 번의 전시에서 작가 공모와 심사, 전시 구성, 관람객 체험 프로그램(아뜰리에) 운영까지 이어 붙였습니다.</p>
+            <div class="proj-tags"><span>전시 기획</span><span>작가 공모·심사</span><span>문화예술 협업</span></div>
+            <p class="proj-foot">전시 기획 총괄</p>
+          </div>
+        </article>
+
+        <article class="proj" data-rv style="--d:.12s">
+          <figure class="proj-fig">
+            <img src="assets/project-khma.jpg" srcset="assets/project-khma-800.jpg 800w, assets/project-khma.jpg 1200w" sizes="(max-width:760px) 100vw, (max-width:1024px) 50vw, 33vw" width="1200" height="900" loading="lazy" decoding="async" alt="2026년 제1회 주택관리사 커리어콘서트 무대">
+            <figcaption>2026 · 제1회 주택관리사 커리어콘서트</figcaption>
+          </figure>
+          <div class="proj-body">
+            <div class="proj-top"><p class="proj-no">03</p><p class="proj-kind">Education</p></div>
+            <p class="proj-org">대한주택관리사협회 교육기획실</p>
+            <h3 class="proj-title">교육과정 · 커리어콘서트 총괄</h3>
+            <p class="proj-desc">주택관리사 교육을 운영하는 대한주택관리사협회에서 전국 교육장의 보수교육·배치교육을 비롯한 법정·비법정 교육과정을 설계하고 총괄합니다. 2026년 제1회 주택관리사 커리어콘서트를 기획했고, 유관기관과의 협약과 협력 사업을 잇는 역할도 맡고 있습니다.</p>
+            <div class="proj-tags"><span>교육과정 설계</span><span>커리어콘서트</span><span>기관 제휴</span></div>
+            <p class="proj-foot">교육기획실 실장</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="collab-areas" data-rv>
+        <p class="ca-label">함께할 수 있는 일</p>
+        <ul class="ca-list">
+          <li>공공·협회 교육과정 설계</li>
+          <li>ESG·문화·예술 행사 기획</li>
+          <li>전시·컨퍼런스 총괄</li>
+          <li>기관 제휴·협업 프로젝트</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- BOOK -->
   <section class="sec book-band" id="book">
     <div class="wrap">
@@ -526,7 +625,7 @@
           <div class="bc-bottom"><b>한국지식문화원</b><span>2024.05</span></div>
         </figure>
         <div class="book-copy">
-          <p class="sec-no" data-rv>03</p>
+          <p class="sec-no" data-rv>04</p>
           <p class="sec-kicker" data-rv style="--d:.05s">Author · 공동 저자</p>
           <h2 class="book-title" data-rv style="--d:.1s">『세상을 바꾸는<br>퍼스널 브랜딩』</h2>
           <p class="book-meta" data-rv style="--d:.14s"><span>한국지식문화원</span><i class="sep" aria-hidden="true"></i><span>2024.05</span><i class="sep" aria-hidden="true"></i><span>공동 저자 10인</span></p>
@@ -545,7 +644,7 @@
     <div class="wrap">
       <div class="sec-head">
         <div data-rv>
-          <p class="sec-no">04</p>
+          <p class="sec-no">05</p>
           <p class="sec-kicker">Career &amp; Credentials</p>
           <h2 class="sec-title">18년, 기관을 옮겨도<br>해 온 일은 같았습니다.</h2>
         </div>
@@ -585,12 +684,12 @@
         <ol class="timeline">
           <li data-rv>
             <span class="tl-when">2024.10 — 현재</span>
-            <span class="tl-org"><b>대한주택관리사협회 교육기획실</b><span class="tl-role">실장 · 교육기획운영 총괄</span></span>
+            <span class="tl-org"><b>대한주택관리사협회 교육기획실</b><span class="tl-role">실장 · 교육기획운영 총괄</span><span class="tl-note">법정 보수교육·배치교육 과정 설계, 커리어콘서트 기획, 유관기관 협력 연계</span></span>
             <span class="tl-now">Now</span>
           </li>
           <li data-rv style="--d:.04s">
             <span class="tl-when">2022.08 — 2024.10</span>
-            <span class="tl-org"><b>소셜혁신연구소 언더스탠드에비뉴</b><span class="tl-role">본부장 · 교육기획 사업운영총괄</span></span>
+            <span class="tl-org"><b>소셜혁신연구소 언더스탠드에비뉴</b><span class="tl-role">본부장 · 교육기획 사업운영총괄</span><span class="tl-note">서울숲 ESG 어린이 미술대회 · 선하리 갤러리 전시 기획 총괄</span></span>
           </li>
           <li data-rv style="--d:.08s">
             <span class="tl-when">2021.02 — 2022.08</span>
@@ -626,9 +725,9 @@
     <div class="wrap">
       <div class="contact-grid">
         <div data-rv>
-          <p class="sec-kicker">05 — Contact</p>
+          <p class="sec-kicker">06 — Contact</p>
           <h2>강의와 협업,<br>여기로 연락 주세요.</h2>
-          <p>기업·공공기관·대학의 교육 기획과 강의, 브랜딩과 글쓰기 협업을 환영합니다. 일정과 대상, 원하는 결과를 함께 적어 주시면 가장 빠르게 답드립니다.</p>
+          <p>기업·공공기관·대학의 교육 기획과 강의는 물론, 공공기관·협회·기업의 교육과정 설계와 ESG·문화·예술 행사, 전시·컨퍼런스 협업 문의를 받습니다. 일정과 대상, 원하는 결과를 함께 적어 주시면 가장 빠르게 답드립니다.</p>
         </div>
         <div class="contact-links" data-rv style="--d:.1s">
           <a class="cl" href="mailto:alwkdi83@naver.com">
