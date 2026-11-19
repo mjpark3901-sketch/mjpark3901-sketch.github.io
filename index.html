@@ -178,7 +178,8 @@
   .hist-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .hist-list{display:flex;flex-wrap:wrap;align-items:baseline}
   .hist-list li{font-size:12.2px;line-height:1.7;color:var(--ink-soft);word-break:keep-all}
-  .hist-list li + li::before{content:"·";margin:0 7px;color:rgba(31,36,33,.3)}
+  .hist-list li + li{margin-left:7px}
+  .hist-list li:not(:last-child)::after{content:"·";margin-left:7px;color:rgba(31,36,33,.3)}
   .hist-note{margin-top:18px;font-size:11.5px;line-height:1.9;color:var(--muted);word-break:keep-all}
 
   /* collaboration & projects */
@@ -336,7 +337,8 @@
     .hist-group{grid-template-columns:1fr;gap:6px}
     .hist-label{padding-top:2px}
     .hist-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px}
-    .hist-list li + li::before{content:none}
+    .hist-list li + li{margin-left:0}
+    .hist-list li:not(:last-child)::after{content:none}
     .timeline li{grid-template-columns:1fr auto;gap:6px 12px;padding:16px 0}
     .tl-when{grid-column:1 / -1;font-size:11.5px;color:var(--sage)}
     .tl-now{grid-column:2;grid-row:2;align-self:start}
@@ -661,13 +663,13 @@
           <div class="panel" data-rv style="--d:.06s">
             <h3>Credentials</h3>
             <div class="chips">
-              <span class="chip chip--key">평생교육사 2급 <small>교육부</small></span>
+              <span class="chip chip--key">평생교육사 2급 <small>교육부 · 2025.06</small></span>
               <span class="chip chip--key">HRD전문위원 <small>한국산업인력공단</small></span>
               <span class="chip chip--key">싱잉볼 2급</span>
-              <span class="chip">퍼스널컬러전문가 1급</span>
-              <span class="chip">색채심리상담사 1급</span>
-              <span class="chip">프레젠테이션 강사 1급</span>
-              <span class="chip">출판지도사 <small>한국지식문화원</small></span>
+              <span class="chip">퍼스널컬러전문가 1급 <small>2021.05</small></span>
+              <span class="chip">색채심리상담사 1급 <small>2021.07</small></span>
+              <span class="chip">프레젠테이션 강사 1급 <small>2019.09</small></span>
+              <span class="chip">출판지도사 <small>한국지식문화원 · 2024.05</small></span>
             </div>
           </div>
           <div class="panel" data-rv style="--d:.12s">
